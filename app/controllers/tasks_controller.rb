@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  # controllerのアクション実行前にログインが必要
+  before_action :login_required
 
   def index
     @tasks = Task.all

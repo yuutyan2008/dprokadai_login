@@ -1,0 +1,30 @@
+<h1>アカウント編集ページ</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+
+<div class="field">
+  <%= f.label :password %> (変更する場合のみ入力)
+  <%= f.password_field :password %>
+</div>
+
+<div class="field">
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</div>
+
+<div class="actions">
+  <%= f.submit "更新", class: "btn btn-primary" %>
+</div>
+<div class="actions">
+  <%= f.submit "戻る", class: "btn btn-primary" %>
+</div>
+<% end %>
