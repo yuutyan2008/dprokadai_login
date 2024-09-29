@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
     # 省パスワードにバリデーションを設定
     validates :password, length: { minimum: 6 }, allow_nil: true 
+
+    # User モデルと Task モデルの間にアソシエーションを設定
+    # ユーザーが削除されると、そのユーザーに関連するタスクも削除
+    has_many :tasks, dependent: :destroy
 end

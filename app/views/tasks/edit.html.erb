@@ -1,6 +1,20 @@
 <h1><%= t('.title') %></h1>
 
-<%= render 'form', task: @task %>
+<%= form_with(model: @task, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
 
-<%= link_to t('common.show'), @task %> |
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('helpers.submit.update'), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+
 <%= link_to t('common.back'), tasks_path %>
