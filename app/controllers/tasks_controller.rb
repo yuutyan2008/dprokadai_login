@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   # controllerのアクション実行前にログインが必要
   before_action :login_required
 
-  # アクションjっ買う前にset_taskが必要なもの。indexは特定の1つのタスクを取得する必要がないため不要
+  # アクション実行前にset_taskが必要なもの。indexは特定の1つのタスクを取得する必要がないため不要
   # editは編集データを取得する必要がある
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 

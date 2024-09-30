@@ -6,11 +6,16 @@ ja:
       task:
         title: タイトル
         content: 内容
+      # ユーザーモデルに対応するデータ
       user:
         name: 名前
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認用）
+      # ログイン状態を管理するための一時的なデータ
+      session:
+        email: メールアドレス
+        password: パスワード
   errors:
     format: "%{attribute}%{message}"
     messages:
