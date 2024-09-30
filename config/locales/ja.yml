@@ -17,6 +17,7 @@ ja:
         email: メールアドレス
         password: パスワード
   errors:
+    # attributeは属性、messageはエラーメッセージ
     format: "%{attribute}%{message}"
     messages:
       blank: "を入力してください"

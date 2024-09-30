@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
     # リダイレクト時にフラッシュメッセージを表示
     unless logged_in?
       flash[:alert] = t('flash.common.login_required')
-    # current_userがnilの場合、ログイン画面に遷移させることで、未ログインのユーザからのアクセスを禁止
-    redirect_to new_session_path unless current_user
+      # current_userがnilの場合、ログイン画面に遷移させることで、未ログインのユーザからのアクセスを禁止
+      redirect_to new_session_path unless current_user
     end
   end
 end
