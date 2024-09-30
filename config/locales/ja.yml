@@ -11,7 +11,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
-        password_confirmation: パスワード（確認用）
+        password_confirmation: パスワード（確認）
       # ログイン状態を管理するための一時的なデータ
       session:
         email: メールアドレス
