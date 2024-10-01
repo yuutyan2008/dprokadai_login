@@ -1,19 +1,35 @@
-<h1><%= t('.title') %></h1>
+<h1>タスク編集ページ</h1>
+
+<%# フォームが表示される前にエラーメッセージを表示するためform_withの前に書く %>
+<% if @task.errors.any? %>
+
+<%# Railsがデフォルトで用意しているエラー用のスタイル（CSS）を適用 %>
+<div id="error_explanation">
+
+  <h2><%= pluralize(@task.errors.count, "error") %> prohibited this tasks from being saved:</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 
 <%= form_with(model: @task, local: true) do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="field">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
+<div class="field">
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</div>
 
-  <div class="actions">
-    <%= f.submit t('helpers.submit.update'), class: "btn btn-primary" %>
-  </div>
+<div class="actions">
+  <%= f.submit t('helpers.submit.update'), class: "btn btn-primary" %>
+</div>
 <% end %>
 
 
