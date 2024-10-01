@@ -19,6 +19,8 @@ class SessionsController < ApplicationController
     # &.を利用し、nilの場合でもエラーが発生しないようにします
     if @user&.authenticate(params[:session][:password])
       # ログイン成功した場合
+      #ログインした際は、Flashを表示させる
+      flash[:notice] = 'ログインしました'
       # セッションオブジェクトにユーザIDを登録し、そのユーザの詳細画面に遷移
       log_in(@user)
       # URLヘルパーメソッドuser_pathで /tasks (index アクション) にリダイレクトする
