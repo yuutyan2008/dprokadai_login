@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         # ユーザ登録に成功した場合の処理、タスク一覧画面に遷移
         redirect_to tasks_path(@user.id)
       else
-        puts @user.errors.full_messages # エラーメッセージをコンソールに表示
+        puts @user.errors.full_messages # エラーメッセージを表示
         # ユーザ登録に失敗した場合の処理:再び登録画面が表示
         render :new
       end
